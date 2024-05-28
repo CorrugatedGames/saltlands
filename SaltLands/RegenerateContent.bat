@@ -1,0 +1,1 @@
+dotnet t4 ContentPathGenerator.tt -o ContentSources.cs
