@@ -82,16 +82,16 @@ public class HomeScreenUI : UICanvas
 
     void TransitionPlayGame(Button button)
     {
-        Console.WriteLine("Play");
+        SaltLandsGame.SaltEmitter.Emit(SaltEvents.LoadPlayGameScreen);
     }
 
     void TransitionOptions(Button button)
     {
-        Console.WriteLine("Options");
+        SaltLandsGame.SaltEmitter.Emit(SaltEvents.LoadOptionsScreen);
     }
 
     void TransitionQuit(Button button)
     {
-        Environment.Exit(0);
+        SaltLandsGame.SaltEmitter.Emit(SaltEvents.QuitGame);
     }
 }

@@ -2,6 +2,7 @@
 using MonoGame.Extended.Screens;
 using Nez;
 using Nez.Systems;
+using System;
 
 namespace SaltLands;
 
@@ -53,10 +54,22 @@ public class SaltLandsGame : Core
     {
         SaltEmitter = new Emitter<SaltEvents>(new SaltEventsComparer());
         SaltEmitter.AddObserver(SaltEvents.LoadHomeScreen, LoadHomeScreen);
+        SaltEmitter.AddObserver(SaltEvents.LoadOptionsScreen, LoadOptionsScreen);
+        SaltEmitter.AddObserver(SaltEvents.QuitGame, QuitGame);
     }
 
     private void LoadHomeScreen()
     {
         screenManager.LoadScreen(new HomeScreen(this));
+    }
+
+    private void LoadOptionsScreen()
+    {
+        screenManager.LoadScreen(new OptionsScreen(this));
+    }
+
+    private void QuitGame()
+    {
+        Environment.Exit(0);
     }
 }

@@ -5,7 +5,10 @@ namespace SaltLands;
 
 public enum SaltEvents
 {
-    LoadHomeScreen
+    LoadHomeScreen,
+    LoadOptionsScreen,
+    LoadPlayGameScreen,
+    QuitGame
 }
 
 public struct SaltEventsComparer : IEqualityComparer<SaltEvents>
