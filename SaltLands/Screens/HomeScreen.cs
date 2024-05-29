@@ -3,7 +3,8 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Screens;
 using Nez;
 using Nez.Sprites;
-using Nez.BitmapFonts;
+using Nez.UI;
+using System;
 
 namespace SaltLands;
 
@@ -29,14 +30,15 @@ public class HomeScreen : GameScreen
         SpriteRenderer renderer = homeEntity.AddComponent<SpriteRenderer>();
         renderer.SetTexture(homeBackground);
 
-        BitmapFont font = menuScene.Content.LoadBitmapFont(Nez.Content.Font.PixelifySansBitmap);
         titleEntity = menuScene.CreateEntity("homeTitleText");
         titleEntity.SetPosition(new Vector2(850, 350));
         titleEntity.SetScale(new Vector2(0.5f, 0.5f));
 
         titleText = titleEntity.AddComponent<TextComponent>();
-        titleText.SetFont(font);
+        titleText.SetFont(SaltLandsGame.saltUI.font);
         titleText.SetText("SaltLands: The Quest for the Mines of Salt and Glory");
+
+        menuScene.CreateEntity("homeUI").AddComponent<HomeScreenUI>();
 
         SaltLandsGame.Scene = menuScene;
     }
@@ -47,5 +49,49 @@ public class HomeScreen : GameScreen
 
     public override void Draw(GameTime gameTime)
     {
+    }
+}
+
+public class HomeScreenUI : UICanvas
+{    
+    public override void OnAddedToEntity()
+    {
+        base.OnAddedToEntity();
+
+        var table = Stage.AddElement(new Table());
+
+        table.Defaults().SetPadBottom(20);
+        table.SetX(1350).SetY(600);
+        table.Right().Center();
+
+        table.Add(new ImageButton(SaltLandsGame.saltUI.skin, "menu-play-button"))
+            .GetElement<ImageButton>()
+            .OnClicked += TransitionPlayGame;
+        table.Row();
+
+        table.Add(new ImageButton(SaltLandsGame.saltUI.skin, "menu-options-button"))
+            .GetElement<ImageButton>()
+            .OnClicked += TransitionOptions;
+        table.Row();
+
+        table.Add(new ImageButton(SaltLandsGame.saltUI.skin, "menu-quit-button"))
+            .GetElement<ImageButton>()
+            .OnClicked += TransitionQuit;
+        table.Row();
+    }
+
+    void TransitionPlayGame(Button button)
+    {
+        Console.WriteLine("Play");
+    }
+
+    void TransitionOptions(Button button)
+    {
+        Console.WriteLine("Options");
+    }
+
+    void TransitionQuit(Button button)
+    {
+        Environment.Exit(0);
     }
 }

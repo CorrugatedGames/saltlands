@@ -8,6 +8,7 @@ namespace SaltLands;
 public class SaltLandsGame : Core
 {
     public static Emitter<SaltEvents> SaltEmitter;
+    public static SaltUI saltUI;
 
     private ScreenManager screenManager;
 
@@ -17,14 +18,10 @@ public class SaltLandsGame : Core
     {
         base.Initialize();
 
-        screenManager = new ScreenManager();
-        Components.Add(screenManager);
-
+        SetupUI();
+        SetupComponents();
         SetupEvents();
-
-        PauseOnFocusLost = false;
-
-        Nez.Screen.SetSize(1920, 1080);
+        SetupNez();
 
         SaltEmitter.Emit(SaltEvents.LoadHomeScreen);
     }
@@ -32,6 +29,24 @@ public class SaltLandsGame : Core
     protected override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+    }
+
+    private void SetupUI()
+    {
+        saltUI = new SaltUI(Content);
+    }
+
+    private void SetupNez()
+    {
+        PauseOnFocusLost = false;
+        Nez.Screen.SetSize(1920, 1080);
+    }
+
+    private void SetupComponents()
+    {
+
+        screenManager = new ScreenManager();
+        Components.Add(screenManager);
     }
 
     private void SetupEvents()
