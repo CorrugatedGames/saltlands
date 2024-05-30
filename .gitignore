@@ -67,3 +67,4 @@ artifacts/
 .vs
 
 ContentSources.cs
+FontCache

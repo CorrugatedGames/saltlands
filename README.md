@@ -2,12 +2,9 @@
 
 ## Useful Things
 
-* https://snowb.org/ can convert fonts to bitmap fonts
+* https://ttf2fnt.com/ can convert fonts to bitmap fonts
 * https://github.com/prime31/Nez/ has a fair bit of information, although documentation is severely lacking
-
-## Useful Commands
-
-* Run `Saltlands/RegenerateContent.bat` to generate `ContentSources.cs` (need to automate this)
+* http://gumui.net/ for the UI editing tool (to make this work within visual studio, right click -> open with -> path to gum)
 
 ## Debugging
 

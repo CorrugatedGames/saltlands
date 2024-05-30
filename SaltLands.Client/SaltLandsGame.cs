@@ -2,14 +2,15 @@
 using MonoGame.Extended.Screens;
 using Nez;
 using Nez.Systems;
+using RenderingLibrary;
 using System;
 
 namespace SaltLands;
 
 public class SaltLandsGame : Core
 {
-    public static Emitter<SaltEvents> SaltEmitter;
-    public static SaltUI saltUI;
+    public Emitter<SaltEvents> SaltEmitter;
+    public SaltUI saltUI;
 
     private ScreenManager screenManager;
 
@@ -30,11 +31,23 @@ public class SaltLandsGame : Core
     protected override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
+        screenManager.Update(gameTime);
+        SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds); 
+    }
+
+    protected override void Draw(GameTime gameTime)
+    {
+        base.Draw(gameTime);
+        screenManager.Draw(gameTime);
+        SystemManagers.Default.Draw();
     }
 
     private void SetupUI()
     {
-        saltUI = new SaltUI(Content);
+        SystemManagers.Default = new SystemManagers();
+        SystemManagers.Default.Initialize(GraphicsDevice, fullInstantiation: true);
+        ToolsUtilities.FileManager.RelativeDirectory = "Content\\GumUI\\";
+        saltUI = new SaltUI();
     }
 
     private void SetupNez()
