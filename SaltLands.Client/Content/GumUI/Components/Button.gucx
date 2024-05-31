@@ -315,7 +315,7 @@
   </Instance>
   <Instance>
     <Name>TextInstance</Name>
-    <BaseType>Text</BaseType>
+    <BaseType>Label</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>

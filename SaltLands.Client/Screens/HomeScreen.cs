@@ -19,16 +19,6 @@ public class HomeScreen : BaseScreen
         LoadScreenData("Home");
     }
 
-    public override void Update(GameTime gameTime)
-    {
-        base.Update(gameTime);
-
-    }
-
-    public override void Draw(GameTime gameTime)
-    {
-    }
-
     protected override void HandleButtonClick(string buttonName)
     {
         switch(buttonName)

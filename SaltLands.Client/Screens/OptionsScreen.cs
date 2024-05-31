@@ -1,26 +1,24 @@
-﻿using Microsoft.Xna.Framework;
-using MonoGame.Extended.Screens;
+﻿
 
 namespace SaltLands;
 
-public class OptionsScreen : GameScreen
+public class OptionsScreen : BaseScreen
 {
-    private SaltLandsGame SaltGame;
-
-    public OptionsScreen(SaltLandsGame game) : base(game) {
-        SaltGame = game;
-    }
+    public OptionsScreen(SaltLandsGame game) : base(game) {}
 
     public override void Initialize()
     {
         base.Initialize();
+        LoadScreenData("Options");
     }
 
-    public override void Update(GameTime gameTime)
+    protected override void HandleButtonClick(string buttonName)
     {
-    }
-
-    public override void Draw(GameTime gameTime)
-    {
+        switch (buttonName)
+        {
+            case "HomeButton":
+                SaltGame.SaltEmitter.Emit(SaltEvents.LoadHomeScreen);
+                break;
+        }
     }
 }

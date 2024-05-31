@@ -14,6 +14,153 @@
         "ElementType": "Components",
         "EventType": 4,
         "TimestampUtc": "2024-05-30T21:04:28.9783481Z"
+      },
+      {
+        "NewName": "Options.TitleText",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:24:37.8489945Z"
+      },
+      {
+        "NewName": "Options.OptionsButton",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:31:09.6660352Z"
+      },
+      {
+        "NewName": "Options.HomeButton",
+        "OldName": "Options.OptionsButton",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T12:45:31.4390692Z"
+      },
+      {
+        "NewName": "TextLabel",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-05-31T12:48:54.6937978Z"
+      },
+      {
+        "NewName": "TextLabel (Container).TextInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:48:58.7078243Z"
+      },
+      {
+        "NewName": "Home.TextLabelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:50:02.6928604Z"
+      },
+      {
+        "NewName": "TextLabel (Container).Text",
+        "OldName": "TextLabel (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T12:51:43.7323256Z"
+      },
+      {
+        "NewName": "Home.TextLabelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:54:59.5339887Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "TextLabel",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2024-05-31T12:55:40.8790136Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Home.TextLabel TextLabelInstance in Home",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T12:55:45.7617347Z"
+      },
+      {
+        "NewName": "Label",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-05-31T12:55:51.2518081Z"
+      },
+      {
+        "NewName": "Home.LabelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:56:36.0223459Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Home.Label LabelInstance in Home",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T12:56:43.1712346Z"
+      },
+      {
+        "NewName": "Home.LabelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:57:30.3891055Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Home.Text TitleText in Home",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T12:58:06.0066836Z"
+      },
+      {
+        "NewName": "Options.LabelInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T12:58:36.8886723Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Options.Text TitleText in Options",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T12:58:51.7680416Z"
+      },
+      {
+        "NewName": "BackgroundImage",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-05-31T13:20:39.6106426Z"
+      },
+      {
+        "NewName": "Home.BackgroundImageInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:22:15.7033468Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Home.Sprite HomeBackground in Home",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T13:27:18.0323805Z"
+      },
+      {
+        "NewName": "Options.BackgroundImageInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:27:23.0421034Z"
       }
     ]
   }

@@ -5,6 +5,7 @@ using Gum.Managers;
 using Gum.Wireframe;
 using GumRuntime;
 using RenderingLibrary;
+using System.Linq;
 
 namespace SaltLands;
 
@@ -12,6 +13,8 @@ public class SaltUI
 {
 
     public GumProjectSave gum;
+
+    private GraphicalUiElement activeScreen;
 
     public SaltUI()
     {
@@ -27,8 +30,18 @@ public class SaltUI
 
     public GraphicalUiElement LoadScreen(string name)
     {
-        var screen = GetScreen(name).ToGraphicalUiElement(SystemManagers.Default, addToManagers: true);
+        if(activeScreen != null)
+        {
+            activeScreen.RemoveFromManagers();
+            var layers = SystemManagers.Default.Renderer.Layers;
+            while (layers.Count > 1)
+            {
+                SystemManagers.Default.Renderer.RemoveLayer(SystemManagers.Default.Renderer.Layers.LastOrDefault());
+            }
+        }
 
-        return screen;
+        activeScreen = GetScreen(name).ToGraphicalUiElement(SystemManagers.Default, addToManagers: true);
+
+        return activeScreen;
     }
 }

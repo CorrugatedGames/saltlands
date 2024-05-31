@@ -69,7 +69,6 @@ public abstract class BaseScreen : GameScreen
 
     protected void LoadScreenData(string screenName)
     {
-
         screen = SaltGame.saltUI.LoadScreen(screenName);
         hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover"));
     }
