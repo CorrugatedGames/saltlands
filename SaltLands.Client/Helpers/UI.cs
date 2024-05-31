@@ -33,11 +33,6 @@ public class SaltUI
         if(activeScreen != null)
         {
             activeScreen.RemoveFromManagers();
-            var layers = SystemManagers.Default.Renderer.Layers;
-            while (layers.Count > 1)
-            {
-                SystemManagers.Default.Renderer.RemoveLayer(SystemManagers.Default.Renderer.Layers.LastOrDefault());
-            }
         }
 
         activeScreen = GetScreen(name).ToGraphicalUiElement(SystemManagers.Default, addToManagers: true);
