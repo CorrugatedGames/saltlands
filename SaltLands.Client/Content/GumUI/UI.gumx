@@ -36,6 +36,11 @@
     <LinkType>ReferenceOriginal</LinkType>
   </ComponentReference>
   <ComponentReference>
+    <Name>Checkbox</Name>
+    <ElementType>Component</ElementType>
+    <LinkType>ReferenceOriginal</LinkType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>Label</Name>
     <ElementType>Component</ElementType>
     <LinkType>ReferenceOriginal</LinkType>

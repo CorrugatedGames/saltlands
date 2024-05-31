@@ -11,6 +11,7 @@ public class SaltLandsGame : Core
 {
     public Emitter<SaltEvents> SaltEmitter;
     public SaltUI saltUI;
+    public Settings settings;
 
     private ScreenManager screenManager;
 
@@ -44,16 +45,19 @@ public class SaltLandsGame : Core
 
     private void SetupUI()
     {
+        settings = new Settings();
+
         SystemManagers.Default = new SystemManagers();
         SystemManagers.Default.Initialize(GraphicsDevice, fullInstantiation: true);
         ToolsUtilities.FileManager.RelativeDirectory = "Content\\GumUI\\";
+
         saltUI = new SaltUI();
     }
 
     private void SetupNez()
     {
         PauseOnFocusLost = false;
-        Nez.Screen.SetSize(1920, 1080);
+        Nez.Screen.SetSize((int)settings.Resolution.X, (int)settings.Resolution.Y);
     }
 
     private void SetupComponents()

@@ -161,6 +161,265 @@
         "ElementType": "Screens",
         "EventType": 5,
         "TimestampUtc": "2024-05-31T13:27:23.0421034Z"
+      },
+      {
+        "NewName": "Options.LabelInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:55:53.7078105Z"
+      },
+      {
+        "NewName": "Options.BorderlessLabel",
+        "OldName": "Options.LabelInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T13:56:26.163919Z"
+      },
+      {
+        "NewName": "Options.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:56:51.6854288Z"
+      },
+      {
+        "NewName": "Options.ContainerInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:57:06.1020019Z"
+      },
+      {
+        "NewName": "Options.BorderlessOption",
+        "OldName": "Options.ContainerInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T13:58:07.1540766Z"
+      },
+      {
+        "NewName": "Options.ResolutionOption",
+        "OldName": "Options.ContainerInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T13:58:12.0292956Z"
+      },
+      {
+        "NewName": "Options.BorderlessLabel1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T13:58:57.9279189Z"
+      },
+      {
+        "NewName": "Options.Label",
+        "OldName": "Options.BorderlessLabel1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T13:59:05.0452978Z"
+      },
+      {
+        "NewName": "Options.ResolutionLabel",
+        "OldName": "Options.Label",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T13:59:23.9688563Z"
+      },
+      {
+        "NewName": "Checkbox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-05-31T14:01:10.2868375Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:02:39.2433686Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:02:43.7747183Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Background",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:48.6055397Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Background",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:48.6060383Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Background",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:48.6065392Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Background",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:48.6155384Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Checked",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:52.4546741Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Checked",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:52.4556729Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Checked",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:52.4566745Z"
+      },
+      {
+        "NewName": "Checkbox (Container).Checked",
+        "OldName": "Checkbox (Container).ColoredRectangleInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:02:52.462672Z"
+      },
+      {
+        "NewName": "Checkbox (Container).RectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:03:03.2980004Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance",
+        "OldName": "Checkbox (Container).Background",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:03:41.3850044Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance",
+        "OldName": "Checkbox (Container).Background",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:03:41.3860057Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance",
+        "OldName": "Checkbox (Container).Background",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:03:41.3865029Z"
+      },
+      {
+        "NewName": "Checkbox (Container).ColoredRectangleInstance",
+        "OldName": "Checkbox (Container).Background",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:03:41.3935048Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "Checkbox (Container).ColoredRectangle Checked in Checkbox (Container)",
+        "ElementType": "Components",
+        "EventType": 6,
+        "TimestampUtc": "2024-05-31T14:04:42.2838559Z"
+      },
+      {
+        "NewName": "Options.CheckboxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:06:52.6374728Z"
+      },
+      {
+        "NewName": "Options.HomeButton1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:08:56.9599275Z"
+      },
+      {
+        "NewName": "Options.ApplyButton",
+        "OldName": "Options.HomeButton1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:09:02.5523675Z"
+      },
+      {
+        "NewName": "Options.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:09:52.1282045Z"
+      },
+      {
+        "NewName": "Options.ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:10:04.3099377Z"
+      },
+      {
+        "NewName": "Options.ButtonInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:10:06.5663261Z"
+      },
+      {
+        "NewName": "Options.LabelInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T14:10:12.0628861Z"
+      },
+      {
+        "NewName": "Options.ResolutionPrev",
+        "OldName": "Options.ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:10:51.6575685Z"
+      },
+      {
+        "NewName": "Options.ResolutionNext",
+        "OldName": "Options.ButtonInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:10:56.588885Z"
+      },
+      {
+        "NewName": "Options.ResolutionText",
+        "OldName": "Options.LabelInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:11:00.9327989Z"
+      },
+      {
+        "NewName": "Options.BorderlessCheckbox",
+        "OldName": "Options.CheckboxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T14:11:10.6085065Z"
       }
     ]
   }

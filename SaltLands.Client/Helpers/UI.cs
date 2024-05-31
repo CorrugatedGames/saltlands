@@ -5,13 +5,11 @@ using Gum.Managers;
 using Gum.Wireframe;
 using GumRuntime;
 using RenderingLibrary;
-using System.Linq;
 
 namespace SaltLands;
 
 public class SaltUI
 {
-
     public GumProjectSave gum;
 
     private GraphicalUiElement activeScreen;
