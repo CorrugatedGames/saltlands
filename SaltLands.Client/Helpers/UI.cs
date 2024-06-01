@@ -37,4 +37,9 @@ public class SaltUI
 
         return activeScreen;
     }
+
+    public void UpdateLayout()
+    {
+        activeScreen?.UpdateLayout();
+    }
 }

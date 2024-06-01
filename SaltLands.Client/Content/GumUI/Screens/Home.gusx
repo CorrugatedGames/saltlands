@@ -47,7 +47,13 @@
     <Variable>
       <Type>float</Type>
       <Name>LabelInstance.X</Name>
-      <Value xsi:type="xsd:float">870</Value>
+      <Value xsi:type="xsd:float">-1100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LabelInstance.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -65,7 +71,13 @@
     <Variable>
       <Type>float</Type>
       <Name>OptionsButton.X</Name>
-      <Value xsi:type="xsd:float">1200</Value>
+      <Value xsi:type="xsd:float">-700</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>OptionsButton.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -83,13 +95,19 @@
     <Variable>
       <Type>float</Type>
       <Name>PlayButton.X</Name>
-      <Value xsi:type="xsd:float">1200</Value>
+      <Value xsi:type="xsd:float">-700</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PlayButton.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>PlayButton.Y</Name>
-      <Value xsi:type="xsd:float">452</Value>
+      <Value xsi:type="xsd:float">450</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -101,13 +119,19 @@
     <Variable>
       <Type>float</Type>
       <Name>QuitButton.X</Name>
-      <Value xsi:type="xsd:float">1200</Value>
+      <Value xsi:type="xsd:float">-700</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>QuitButton.X Units</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>QuitButton.Y</Name>
-      <Value xsi:type="xsd:float">599</Value>
+      <Value xsi:type="xsd:float">600</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">

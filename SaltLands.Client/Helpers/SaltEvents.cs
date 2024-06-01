@@ -5,6 +5,7 @@ namespace SaltLands;
 
 public enum SaltEvents
 {
+    WindowResize,
     LoadHomeScreen,
     LoadOptionsScreen,
     LoadPlayGameScreen,

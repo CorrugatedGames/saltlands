@@ -11,7 +11,7 @@ public class SaltLandsGame : Core
 {
     public Emitter<SaltEvents> SaltEmitter;
     public SaltUI saltUI;
-    public Settings settings;
+    public SettingsManager settings;
 
     private ScreenManager screenManager;
 
@@ -21,9 +21,9 @@ public class SaltLandsGame : Core
     {
         base.Initialize();
 
+        SetupEvents();
         SetupUI();
         SetupComponents();
-        SetupEvents();
         SetupNez();
 
         SaltEmitter.Emit(SaltEvents.LoadHomeScreen);
@@ -45,18 +45,20 @@ public class SaltLandsGame : Core
 
     private void SetupUI()
     {
-        settings = new Settings();
 
         SystemManagers.Default = new SystemManagers();
         SystemManagers.Default.Initialize(GraphicsDevice, fullInstantiation: true);
         ToolsUtilities.FileManager.RelativeDirectory = "Content\\GumUI\\";
 
         saltUI = new SaltUI();
+
+        settings = new SettingsManager(this);
     }
 
     private void SetupNez()
     {
         PauseOnFocusLost = false;
+        ExitOnEscapeKeypress = false;
         Nez.Screen.SetSize((int)settings.Resolution.X, (int)settings.Resolution.Y);
     }
 
@@ -70,9 +72,15 @@ public class SaltLandsGame : Core
     private void SetupEvents()
     {
         SaltEmitter = new Emitter<SaltEvents>(new SaltEventsComparer());
+        SaltEmitter.AddObserver(SaltEvents.WindowResize, ResizeWindow);
         SaltEmitter.AddObserver(SaltEvents.LoadHomeScreen, LoadHomeScreen);
         SaltEmitter.AddObserver(SaltEvents.LoadOptionsScreen, LoadOptionsScreen);
         SaltEmitter.AddObserver(SaltEvents.QuitGame, QuitGame);
+    }
+
+    private void ResizeWindow()
+    {
+        saltUI.UpdateLayout();
     }
 
     private void LoadHomeScreen()

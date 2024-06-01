@@ -420,6 +420,48 @@
         "ElementType": "Screens",
         "EventType": 7,
         "TimestampUtc": "2024-05-31T14:11:10.6085065Z"
+      },
+      {
+        "NewName": "Options.BorderlessLabel1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T18:06:25.3140604Z"
+      },
+      {
+        "NewName": "Options.BorderlessOption1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T18:06:25.316561Z"
+      },
+      {
+        "NewName": "Options.BorderlessCheckbox1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-05-31T18:06:25.3380572Z"
+      },
+      {
+        "NewName": "Options.FullscreenOption",
+        "OldName": "Options.BorderlessOption1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T18:06:33.1359747Z"
+      },
+      {
+        "NewName": "Options.FullscreenLabel",
+        "OldName": "Options.BorderlessLabel1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T18:06:37.9426088Z"
+      },
+      {
+        "NewName": "Options.FullscreenCheckbox",
+        "OldName": "Options.BorderlessCheckbox1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-05-31T18:06:42.3742649Z"
       }
     ]
   }

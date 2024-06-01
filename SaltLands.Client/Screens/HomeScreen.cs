@@ -1,10 +1,5 @@
-﻿using Gum.Wireframe;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using MonoGame.Extended.Screens;
-using RenderingLibrary;
-using System.Collections.Generic;
-using System.Linq;
+﻿
+using Gum.Wireframe;
 
 namespace SaltLands;
 
@@ -19,9 +14,9 @@ public class HomeScreen : BaseScreen
         LoadScreenData("Home");
     }
 
-    protected override void HandleButtonClick(string buttonName)
+    protected override void HandleButtonClick(GraphicalUiElement button)
     {
-        switch(buttonName)
+        switch(button.Name)
         {
             case "PlayButton":
                 SaltGame.SaltEmitter.Emit(SaltEvents.LoadPlayGameScreen);

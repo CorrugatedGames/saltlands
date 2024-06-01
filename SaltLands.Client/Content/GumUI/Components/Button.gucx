@@ -5,6 +5,11 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>Actives</Type>
+      <Name>ActivesState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ColoredRectangleInstance.Blue</Name>
       <Value xsi:type="xsd:int">34</Value>
@@ -62,6 +67,12 @@
       <Type>Default</Type>
       <Name>DefaultState</Name>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Disabled</Name>
+      <SetsValue>false</SetsValue>
+      <IsCustomVariable>true</IsCustomVariable>
     </Variable>
     <Variable>
       <Type>float</Type>
@@ -144,7 +155,7 @@
       <Type>State</Type>
       <Name>State</Name>
       <Value xsi:type="xsd:string">Default</Value>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
@@ -304,6 +315,77 @@
         <Type>int</Type>
         <Name>ColoredRectangleInstance.Red</Name>
         <Value xsi:type="xsd:int">183</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Actives</Name>
+    <IsSetRecursively>false</IsSetRecursively>
+    <State>
+      <Name>Enabled</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Blue</Name>
+        <Value xsi:type="xsd:int">34</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">223</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.HasEvents</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <Category>Behavior</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Red</Name>
+        <Value xsi:type="xsd:int">223</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>State</Type>
+        <Name>ColoredRectangleInstance.State</Name>
+        <Value xsi:type="xsd:string">Default</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Disabled</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Blue</Name>
+        <Value xsi:type="xsd:int">140</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Green</Name>
+        <Value xsi:type="xsd:int">149</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.HasEvents</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredRectangleInstance.Red</Name>
+        <Value xsi:type="xsd:int">149</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>ColoredRectangleInstance.State</Name>
+        <Value xsi:type="xsd:string">Default</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

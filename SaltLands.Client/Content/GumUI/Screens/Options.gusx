@@ -15,6 +15,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>ApplyButton.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>ApplyButton.Width</Name>
       <Value xsi:type="xsd:float">350</Value>
@@ -177,6 +183,96 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenCheckbox.Parent</Name>
+      <Value xsi:type="xsd:string">FullscreenOption</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.X</Name>
+      <Value xsi:type="xsd:float">400</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenCheckbox.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FullscreenLabel.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenLabel.Parent</Name>
+      <Value xsi:type="xsd:string">FullscreenOption</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullscreenLabel.Text</Name>
+      <Value xsi:type="xsd:string">Fullscreen</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenLabel.Width</Name>
+      <Value xsi:type="xsd:float">330</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenLabel.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenLabel.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenOption.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenOption.Width</Name>
+      <Value xsi:type="xsd:float">1000</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenOption.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullscreenOption.Y</Name>
+      <Value xsi:type="xsd:float">300</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>HomeButton.Parent</Name>
       <SetsValue>true</SetsValue>
@@ -215,6 +311,12 @@
       <Type>HorizontalAlignment</Type>
       <Name>LabelInstance.HorizontalAlignment</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LabelInstance.Parent</Name>
+      <Value xsi:type="xsd:string">ApplyButton</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -415,6 +517,11 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
+    <Name>FullscreenLabel</Name>
+    <BaseType>Label</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
     <Name>ResolutionLabel</Name>
     <BaseType>Label</BaseType>
     <DefinedByBase>false</DefinedByBase>
@@ -435,7 +542,17 @@
     <DefinedByBase>false</DefinedByBase>
   </Instance>
   <Instance>
+    <Name>FullscreenOption</Name>
+    <BaseType>Container</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
     <Name>BorderlessCheckbox</Name>
+    <BaseType>Checkbox</BaseType>
+    <DefinedByBase>false</DefinedByBase>
+  </Instance>
+  <Instance>
+    <Name>FullscreenCheckbox</Name>
     <BaseType>Checkbox</BaseType>
     <DefinedByBase>false</DefinedByBase>
   </Instance>

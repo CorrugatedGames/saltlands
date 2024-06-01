@@ -91,7 +91,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -161,7 +161,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -226,9 +226,116 @@
     <State>
       <Name>Checked</Name>
       <Variable>
+        <Type>float</Type>
+        <Name>Checked.Height</Name>
+        <Value xsi:type="xsd:float">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>Checked.Height Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>bool</Type>
         <Name>Checked.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.Width</Name>
+        <Value xsi:type="xsd:float">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.X</Name>
+        <Value xsi:type="xsd:float">10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>Gum.Managers.PositionUnitType</Type>
+        <Name>Checked.X Units</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.Y</Name>
+        <Value xsi:type="xsd:float">10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>Gum.Managers.PositionUnitType</Type>
+        <Name>Checked.Y Units</Name>
+        <Value xsi:type="xsd:int">3</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ColoredRectangleInstance.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Unchecked</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.Height</Name>
+        <Value xsi:type="xsd:float">90</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>Checked.Height Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>Checked.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.Width</Name>
+        <Value xsi:type="xsd:float">90</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.X</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>Checked.X Units</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Checked.Y</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>Checked.Y Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <Category>Position</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ColoredRectangleInstance.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

@@ -18,14 +18,6 @@ public abstract class BaseScreen : GameScreen
 
     public BaseScreen(SaltLandsGame game) : base(game) { }
 
-    public override void Initialize()
-    {
-        base.Initialize();
-
-        screen = SaltGame.saltUI.LoadScreen("Home");
-        hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover"));
-    }
-
     public override void Update(GameTime gameTime)
     {
         var mouseState = Mouse.GetState();
@@ -55,7 +47,7 @@ public abstract class BaseScreen : GameScreen
 
             if (isDownThisFrame && !wasDownLastFrame && isOver)
             {
-                HandleButtonClick(button.Name);
+                HandleButtonClick(button);
             }
         }
 
@@ -73,5 +65,5 @@ public abstract class BaseScreen : GameScreen
         hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover"));
     }
 
-    protected abstract void HandleButtonClick(string buttonName);
+    protected abstract void HandleButtonClick(GraphicalUiElement buttonName);
 }
