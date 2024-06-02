@@ -1,8 +1,7 @@
 ﻿using Gum.Wireframe;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.Screens;
-using RenderingLibrary;
+using MonoGameGum.Input;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -12,47 +11,21 @@ public abstract class BaseScreen : GameScreen
 {
     protected SaltLandsGame SaltGame => (SaltLandsGame)Game;
     protected GraphicalUiElement screen;
-    protected IEnumerable<GraphicalUiElement> hoverables;
-
-    private bool wasDownLastFrame = false;
+    protected IEnumerable<InteractiveGue> hoverables;
+    Cursor cursor;
 
     public BaseScreen(SaltLandsGame game) : base(game) { }
 
+    public override void Initialize()
+    {
+        base.Initialize();
+        cursor = new Cursor();
+    }
+
     public override void Update(GameTime gameTime)
     {
-        var mouseState = Mouse.GetState();
-
-        int mouseX = mouseState.X;
-        int mouseY = mouseState.Y;
-
-
-        bool isDownThisFrame = mouseState.LeftButton == ButtonState.Pressed;
-
-        foreach (var button in hoverables)
-        {
-            bool isOver =
-                mouseX > button.GetAbsoluteLeft() &&
-                mouseX < button.GetAbsoluteRight() &&
-                mouseY > button.GetAbsoluteTop() &&
-                mouseY < button.GetAbsoluteBottom();
-
-            if (isOver)
-            {
-                button.ApplyState("Hover");
-            }
-            else
-            {
-                button.ApplyState("Normal");
-            }
-
-            if (isDownThisFrame && !wasDownLastFrame && isOver)
-            {
-                HandleButtonClick(button);
-            }
-        }
-
-        wasDownLastFrame = isDownThisFrame;
-
+        cursor.Activity(gameTime.TotalGameTime.TotalSeconds);
+        screen?.DoUiActivityRecursively(cursor);
     }
 
     public override void Draw(GameTime gameTime)
@@ -62,8 +35,20 @@ public abstract class BaseScreen : GameScreen
     protected void LoadScreenData(string screenName)
     {
         screen = SaltGame.saltUI.LoadScreen(screenName);
-        hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover"));
-    }
+        hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover")).Select(item => (InteractiveGue) item);
 
-    protected abstract void HandleButtonClick(GraphicalUiElement buttonName);
+
+        foreach (var button in hoverables)
+        {
+            button.RollOn += (_, _) =>
+            {
+                button.ApplyState("Hover");
+            };
+
+            button.RollOff += (_, _) =>
+            {
+                button.ApplyState("Normal");
+            };
+        }
+    }
 }

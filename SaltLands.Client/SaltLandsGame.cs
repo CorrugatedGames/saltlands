@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using GumRuntime;
+using Microsoft.Xna.Framework;
 using MonoGame.Extended.Screens;
 using Nez;
 using Nez.Systems;
@@ -45,6 +46,8 @@ public class SaltLandsGame : Core
 
     private void SetupUI()
     {
+        ElementSaveExtensions.RegisterGueInstantiationType("Button", typeof(GueButton));
+        ElementSaveExtensions.RegisterGueInstantiationType("Checkbox", typeof(GueCheckbox));
 
         SystemManagers.Default = new SystemManagers();
         SystemManagers.Default.Initialize(GraphicsDevice, fullInstantiation: true);

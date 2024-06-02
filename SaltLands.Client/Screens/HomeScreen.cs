@@ -1,5 +1,6 @@
 ﻿
 using Gum.Wireframe;
+using System;
 
 namespace SaltLands;
 
@@ -12,23 +13,14 @@ public class HomeScreen : BaseScreen
     {
         base.Initialize();
         LoadScreenData("Home");
-    }
 
-    protected override void HandleButtonClick(GraphicalUiElement button)
-    {
-        switch(button.Name)
-        {
-            case "PlayButton":
-                SaltGame.SaltEmitter.Emit(SaltEvents.LoadPlayGameScreen);
-                break;
+        GueButton playButton = (GueButton)screen.GetGraphicalUiElementByName("PlayButton");
+        playButton.Click += (_, _) => SaltGame.SaltEmitter.Emit(SaltEvents.LoadPlayGameScreen);
 
-            case "OptionsButton":
-                SaltGame.SaltEmitter.Emit(SaltEvents.LoadOptionsScreen);
-                break;
+        GueButton optionsButton = (GueButton) screen.GetGraphicalUiElementByName("OptionsButton");
+        optionsButton.Click += (_, _) => SaltGame.SaltEmitter.Emit(SaltEvents.LoadOptionsScreen);
 
-            case "QuitButton":
-                SaltGame.SaltEmitter.Emit(SaltEvents.QuitGame);
-                break;
-        }
+        GueButton quitButton = (GueButton)screen.GetGraphicalUiElementByName("QuitButton");
+        quitButton.Click += (_, _) => SaltGame.SaltEmitter.Emit(SaltEvents.QuitGame);
     }
 }
