@@ -76,6 +76,8 @@ public class OptionsScreen : BaseScreen
     {
         var resolutionLabel = screen.GetGraphicalUiElementByName("ResolutionText");
         var currentResolution = SaltGame.settings.Resolution.X + "x" + SaltGame.settings.Resolution.Y;
+
+
         resolutionLabel.SetProperty("Text", currentResolution);
     }
 
