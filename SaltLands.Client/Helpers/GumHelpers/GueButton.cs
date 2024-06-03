@@ -2,9 +2,7 @@
 
 namespace SaltLands;
 
-public class GueButton : InteractiveGue
+public class GueButton : GueFormControl
 {
-    public bool Disabled = false;
-
     public GueButton() { }
 }

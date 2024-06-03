@@ -2,9 +2,7 @@
 
 namespace SaltLands;
 
-public class GueCheckbox : InteractiveGue
+public class GueCheckbox : GueFormControl
 {
-    public bool Disabled = false;
-
     public GueCheckbox() { }
 }

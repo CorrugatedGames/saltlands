@@ -7,7 +7,13 @@ using System.Linq;
 namespace SaltLands;
 
 public class OptionsScreen : BaseScreen
+
 {
+    GueCheckbox fullscreenCheckbox;
+    GueCheckbox borderlessCheckbox;
+    GueButton resolutionPrevButton;
+    GueButton resolutionNextButton;
+
     public OptionsScreen(SaltLandsGame game) : base(game) {}
 
     public override void Initialize()
@@ -20,50 +26,11 @@ public class OptionsScreen : BaseScreen
         GueButton homeButton = (GueButton)screen.GetGraphicalUiElementByName("HomeButton");
         homeButton.Click += (_, _) => SaltGame.SaltEmitter.Emit(SaltEvents.LoadHomeScreen);
 
-        GueCheckbox borderlessCheckbox = (GueCheckbox) screen.GetGraphicalUiElementByName("BorderlessCheckbox");
-        borderlessCheckbox.Click += (_, _) =>
-        {
-            bool isBorderless = SaltGame.settings.settingsData.IsBorderless;
-            SaltGame.settings.SetBorderless(!isBorderless);
-
-            if (SaltGame.settings.settingsData.IsBorderless)
-            {
-                borderlessCheckbox.ApplyState("Checked");
-            }
-            else
-            {
-                borderlessCheckbox.ApplyState("Unchecked");
-            }
-        };
-
-        if (SaltGame.settings.settingsData.IsBorderless)
-        {
-            borderlessCheckbox.ApplyState("Checked");
-        }
-
-        GueCheckbox fullscreenCheckbox = (GueCheckbox)screen.GetGraphicalUiElementByName("FullscreenCheckbox");
-        borderlessCheckbox.Click += (_, _) =>
-        {
-            bool isFullscreen = SaltGame.settings.settingsData.IsFullscreen;
-            SaltGame.settings.SetFullscreen(!isFullscreen);
-
-            if (SaltGame.settings.settingsData.IsFullscreen)
-            {
-                fullscreenCheckbox.ApplyState("Checked");
-            }
-            else
-            {
-                fullscreenCheckbox.ApplyState("Unchecked");
-            }
-        };
-        if (SaltGame.settings.settingsData.IsFullscreen)
-        {
-            fullscreenCheckbox.ApplyState("Checked");
-        }
-
-        GueButton resolutionPrevButton = (GueButton)screen.GetGraphicalUiElementByName("ResolutionPrev");
+        resolutionPrevButton = (GueButton)screen.GetGraphicalUiElementByName("ResolutionPrev");
         resolutionPrevButton.Click += (_, _) =>
         {
+            if (resolutionPrevButton.IsDisabled) return;
+
             int resolutionIndex = GetResolutionIndex();
             if (resolutionIndex == 0) return;
 
@@ -72,9 +39,11 @@ public class OptionsScreen : BaseScreen
             UpdateResolutionLabel();
         };
 
-        GueButton resolutionNextButton = (GueButton)screen.GetGraphicalUiElementByName("ResolutionNext");
+        resolutionNextButton = (GueButton)screen.GetGraphicalUiElementByName("ResolutionNext");
         resolutionNextButton.Click += (_, _) =>
         {
+            if (resolutionNextButton.IsDisabled) return;
+
             int resolutionIndex = GetResolutionIndex();
             if (resolutionIndex == SaltGame.settings.AvailableResolutions.Count() - 1) return;
 
@@ -83,6 +52,24 @@ public class OptionsScreen : BaseScreen
             UpdateResolutionLabel();
         };
 
+        borderlessCheckbox = (GueCheckbox) screen.GetGraphicalUiElementByName("BorderlessCheckbox");
+        borderlessCheckbox.Click += (_, _) =>
+        {
+            bool isBorderless = SaltGame.settings.settingsData.IsBorderless;
+            SaltGame.settings.SetBorderless(!isBorderless);
+            UpdateBorderlessCheckbox();
+        };
+        UpdateBorderlessCheckbox();
+
+        fullscreenCheckbox = (GueCheckbox)screen.GetGraphicalUiElementByName("FullscreenCheckbox");
+        fullscreenCheckbox.Click += (_, _) =>
+        {
+            bool isFullscreen = SaltGame.settings.settingsData.IsFullscreen;
+            SaltGame.settings.SetFullscreen(!isFullscreen);
+            UpdateFullscreenCheckbox();
+        };
+        UpdateFullscreenCheckbox();
+
     }
 
     private void UpdateResolutionLabel()
@@ -90,6 +77,56 @@ public class OptionsScreen : BaseScreen
         var resolutionLabel = screen.GetGraphicalUiElementByName("ResolutionText");
         var currentResolution = SaltGame.settings.Resolution.X + "x" + SaltGame.settings.Resolution.Y;
         resolutionLabel.SetProperty("Text", currentResolution);
+    }
+
+    private void UpdateBorderlessCheckbox()
+    {
+        if (SaltGame.settings.settingsData.IsBorderless)
+        {
+            borderlessCheckbox.ApplyState("Checked");
+        }
+        else
+        {
+            borderlessCheckbox.ApplyState("Unchecked");
+        }
+
+        UpdateResolutionChangeButtons();
+    }
+
+    private void UpdateFullscreenCheckbox()
+    {
+        if (SaltGame.settings.settingsData.IsFullscreen)
+        {
+            fullscreenCheckbox.ApplyState("Checked");
+        }
+        else
+        {
+            fullscreenCheckbox.ApplyState("Unchecked");
+        }
+
+        UpdateResolutionChangeButtons();
+    }
+
+    private void UpdateResolutionChangeButtons()
+    {
+        bool shouldDisable = SaltGame.settings.settingsData.IsBorderless || SaltGame.settings.settingsData.IsFullscreen;
+
+        if(shouldDisable)
+        {
+            resolutionPrevButton.IsDisabled = true;
+            resolutionNextButton.IsDisabled = true;
+
+            resolutionPrevButton.ApplyState("Disabled");
+            resolutionNextButton.ApplyState("Disabled");
+        } 
+        else
+        {
+            resolutionPrevButton.IsDisabled = false;
+            resolutionNextButton.IsDisabled = false;
+
+            resolutionPrevButton.ApplyState("Enabled");
+            resolutionNextButton.ApplyState("Enabled");
+        }
     }
 
     private int GetResolutionIndex()

@@ -11,7 +11,7 @@ public abstract class BaseScreen : GameScreen
 {
     protected SaltLandsGame SaltGame => (SaltLandsGame)Game;
     protected GraphicalUiElement screen;
-    protected IEnumerable<InteractiveGue> hoverables;
+    protected IEnumerable<GueFormControl> hoverables;
     Cursor cursor;
 
     public BaseScreen(SaltLandsGame game) : base(game) { }
@@ -35,18 +35,20 @@ public abstract class BaseScreen : GameScreen
     protected void LoadScreenData(string screenName)
     {
         screen = SaltGame.saltUI.LoadScreen(screenName);
-        hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover")).Select(item => (InteractiveGue) item);
+        hoverables = screen.ContainedElements.Where(child => child.ElementSave.AllStates.Any(state => state.Name == "Hover")).Select(item => (GueFormControl) item);
 
 
         foreach (var button in hoverables)
         {
             button.RollOn += (_, _) =>
             {
+                if (button.IsDisabled) return;
                 button.ApplyState("Hover");
             };
 
             button.RollOff += (_, _) =>
             {
+                if (button.IsDisabled) return;
                 button.ApplyState("Normal");
             };
         }
