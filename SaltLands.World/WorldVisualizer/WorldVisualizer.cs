@@ -1,5 +1,6 @@
 ﻿
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Runtime.Versioning;
 using SaltLands.WorldGenerator;
 
@@ -28,7 +29,7 @@ public static class WorldVisualizer
                 for(int y = 0; y < chunk.Tiles[x].Length; y++)
                 {
                     Tile tile = chunk.Tiles[x][y];
-                    Color color = GetColor(tile.Height);
+                    Color color = GetColorFromBiome(tile.Biome);
 
                     int realX = (int) (((chunk.Position.X - smallestX) * chunkSize) + tile.Position.X);
                     int realY = (int) (((chunk.Position.Y - smallestY) * chunkSize) + tile.Position.Y);
@@ -37,22 +38,51 @@ public static class WorldVisualizer
             }
         }
 
-        bmp.Save($"{seed}.bmp");
+        bmp.Save($"{seed}.png", ImageFormat.Png);
     }
 
-    private static Color GetColor(float color) {
+    private static Color GetColorFromBiome(Biome biome)
+    {
+        switch(biome)
+        {
+            case Biome.Ocean:                       return Color.FromArgb(0, 0, 255);
+            case Biome.Beach:                       return Color.FromArgb(208, 207, 130);
+            case Biome.Scorched:                    return Color.FromArgb(156, 155, 70);
+            case Biome.Tundra:                      return Color.FromArgb(89, 155, 203);
+            case Biome.Snow:                        return Color.FromArgb(138, 246, 243);
+            case Biome.TemperateDesert:             return Color.FromArgb(235, 157, 126);
+            case Biome.Shrubs:                      return Color.FromArgb(90, 195, 102);
+            case Biome.Taiga:                       return Color.FromArgb(189, 210, 103);
+            case Biome.Grassland:                   return Color.FromArgb(90, 195, 139);
+            case Biome.TemperateDeciduousForest:    return Color.FromArgb(63, 179, 80);
+            case Biome.TemperateRainForest:         return Color.FromArgb(84, 195, 0);
+            case Biome.SubtropicalDesert:           return Color.FromArgb(226, 181, 45);
+            case Biome.TropicalSeasonalForest:      return Color.FromArgb(67, 255, 109);
+            case Biome.TropicalRainForest:          return Color.FromArgb(56, 152, 104);
+
+        }
+
+        return Color.FromArgb(0, 0, 0);
+    }
+
+    private static Color GetColorFromHeight(float color) {
+        // deep water
+        if(color < -0.9d)
+        {
+            return Color.FromArgb(30, 55, 100);
+        }
         // water
-        if (color < -0.2d)
+        else if (color < -0.7d)
         {
             return Color.FromArgb(60, 110, 200);
         }
         // shallow water
-        else if (color < -0.1d)
+        else if (color < -0.6d)
         {   
             return Color.FromArgb(64, 104, 192);
         }
         // sand
-        else if (color < 0.00d)
+        else if (color < -0.5d)
         { 
             return Color.FromArgb(208, 207, 130);
         }

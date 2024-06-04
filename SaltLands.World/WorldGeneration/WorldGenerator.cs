@@ -1,21 +1,34 @@
 ﻿
 namespace SaltLands.WorldGenerator;
 
+internal enum Biome
+{
+    Ocean,
+    Beach,
+    Scorched,
+    Bare,
+    Tundra,
+    Snow,
+    TemperateDesert,
+    Shrubs,
+    Taiga,
+    Grassland,
+    TemperateDeciduousForest,
+    TemperateRainForest,
+    SubtropicalDesert,
+    TropicalSeasonalForest,
+    TropicalRainForest
+}
+
 internal class WorldGenerator
 {
     private WorldSettings Settings;
     public readonly ChunkManager ChunkManager;
 
-    public FastNoiseLite FastNoise { get; private set; }
-
     public WorldGenerator(WorldSettings settings)
     {
         Settings = settings;
-        ChunkManager = new ChunkManager(Settings, this);
-        FastNoise = new FastNoiseLite(Settings.NumericSeed);
-
-        FastNoise.SetNoiseType(FastNoiseLite.NoiseType.Perlin);
-        FastNoise.SetFractalType(FastNoiseLite.FractalType.FBm);
+        ChunkManager = new ChunkManager(Settings);
     }
 
     public void GenerateAroundCenter(int chunkX, int chunkY, int radius = -1)

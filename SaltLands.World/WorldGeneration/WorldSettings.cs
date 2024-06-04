@@ -16,14 +16,6 @@ public class WorldSettings
 
     public readonly int WorldVersion = 1;
 
-    public int NumericSeed
-    {
-        get
-        {
-            return Metadata.WorldSeed.GetHashCode();
-        }
-    }
-
     public class WorldMagicNumbers
     {
         // number of ms between server ticks. we want 30 ticks per second.
