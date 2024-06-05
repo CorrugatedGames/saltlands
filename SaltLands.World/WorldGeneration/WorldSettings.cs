@@ -48,6 +48,9 @@ public class WorldSettings
         // amount of chunks the system may generate per tick
         public int ChunksToGeneratePerThreadTick = 10;
 
+        // amount of chunks the system may generate per tick
+        public int ChunkGenerationIterations = 4;
+
         // how long chunks should be checked to see if they should be unloaded (in ms)
         public int ChunkUnloadInterval = 4000;
 
