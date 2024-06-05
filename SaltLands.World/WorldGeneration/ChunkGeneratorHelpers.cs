@@ -95,7 +95,7 @@ internal partial class ChunkGenerator
 
     private static Centroid GetClosestCentroid(List<Centroid> points, Vector2 tilePosition)
     {
-        return points.OrderByDescending(c => DistanceBetween(c.Position, tilePosition)).First();
+        return points.OrderBy(c => DistanceBetween(c.Position, tilePosition)).First();
     }
 
 
