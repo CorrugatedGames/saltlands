@@ -11,8 +11,10 @@ internal class Tile
     public Biome Biome { 
         get
         {
-            if (Height < 0) return Biome.Ocean;
-            if (Height < 0.20) return Biome.Beach;
+            if (Height < -0.6) return Biome.Ocean;
+            if (Height < -0.4) return Biome.DeepWater;
+            if (Height < -0.1) return Biome.ShallowWater;
+            if (Height < 0.05) return Biome.Beach;
 
             if (Height > 0.80)
             {

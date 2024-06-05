@@ -34,7 +34,7 @@ public class SaltLandsWorld : IDisposable
 
     public void Generate()
     {
-        Generator.GenerateAroundCenter(Settings.MagicNumbers.MapSizeX / Settings.MagicNumbers.ChunkSize, Settings.MagicNumbers.MapSizeY / Settings.MagicNumbers.ChunkSize, 15);
+        Generator.GenerateAroundCenter(Settings.MagicNumbers.MapSizeX / Settings.MagicNumbers.ChunkSize, Settings.MagicNumbers.MapSizeY / Settings.MagicNumbers.ChunkSize, 100);
 
         Visualization.WorldVisualizer.RenderWorld(this);
     }

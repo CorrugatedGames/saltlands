@@ -31,7 +31,7 @@ public class WorldSettings
         public int TrackedEntitiesPerClient = 1000;
 
         // width and height of a chunk
-        public int ChunkSize = 64;
+        public int ChunkSize = 16;
 
         // size of the chunk ready buffer. if full, will not generate new chunks until it's less full.
         public int ReadyChunkQueueSize = 200;

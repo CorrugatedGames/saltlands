@@ -27,6 +27,7 @@ internal class ChunkManager
     {
         var newChunk = new Chunk()
         {
+            LastLoadedAt = DateTime.Now.Ticks,
             Position = new Vector2(chunkX, chunkY)
         };
 
