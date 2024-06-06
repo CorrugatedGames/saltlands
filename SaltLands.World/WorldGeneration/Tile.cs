@@ -1,14 +1,22 @@
 ﻿using System.Numerics;
 
 namespace SaltLands.WorldGenerator;
+
 internal class Tile
 {
+    #region Public Fields
+
     public float Height;
     public float Moisture;
-    public float Temperature;
     public Vector2 Position;
+    public float Temperature;
 
-    public Biome Biome { 
+    #endregion Public Fields
+
+    #region Public Properties
+
+    public Biome Biome
+    {
         get
         {
             if (Height < -0.6) return Biome.Ocean;
@@ -44,6 +52,8 @@ internal class Tile
             if (Moisture < 0.66) return Biome.TropicalSeasonalForest;
 
             return Biome.TropicalRainForest;
-        } 
+        }
     }
+
+    #endregion Public Properties
 }

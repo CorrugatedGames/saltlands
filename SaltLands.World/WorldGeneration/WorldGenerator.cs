@@ -1,5 +1,4 @@
-﻿
-namespace SaltLands.WorldGenerator;
+﻿namespace SaltLands.WorldGenerator;
 
 internal enum Biome
 {
@@ -24,25 +23,42 @@ internal enum Biome
 
 internal class WorldGenerator
 {
+    #region Public Fields
+
+    public readonly ChunkGenerator ChunkGenerator;
+
+    #endregion Public Fields
+
+    #region Private Fields
+
     private WorldSettings Settings;
-    public readonly ChunkManager ChunkManager;
+
+    #endregion Private Fields
+
+    #region Public Constructors
 
     public WorldGenerator(WorldSettings settings)
     {
         Settings = settings;
-        ChunkManager = new ChunkManager(Settings);
+        ChunkGenerator = new ChunkGenerator(Settings);
     }
+
+    #endregion Public Constructors
+
+    #region Public Methods
 
     public void GenerateAroundCenter(int chunkX, int chunkY, int radius = -1)
     {
         if (radius < 1) radius = Settings.MagicNumbers.ChunkRadiusMax;
 
-        for(int x = chunkX - radius; x < chunkX + radius; x++)
+        for (int x = chunkX - radius; x < chunkX + radius; x++)
         {
-            for(int y = chunkY - radius; y < chunkY + radius; y++)
+            for (int y = chunkY - radius; y < chunkY + radius; y++)
             {
-                ChunkManager.LoadChunk(x, y);
+                ChunkGenerator.LoadChunk(x, y);
             }
         }
     }
+
+    #endregion Public Methods
 }
