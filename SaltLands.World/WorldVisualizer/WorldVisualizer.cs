@@ -45,13 +45,7 @@ public static class WorldVisualizer
                 }
             }
 
-            foreach (var centroid in renderData.Centroids)
-            {
-                int realX = Math.Max(0, (int)(centroid.Position.X - (smallestX * chunkSize)));
-                int realY = Math.Max(0, (int)(centroid.Position.Y - (smallestY * chunkSize)));
-                bmp.SetPixel(realX, realY, Color.FromArgb(0, 0, 0));
-            }
-
+            /*
             for (int e = 0; e < renderData.NumEdges; e++)
             {
                 if (e >= renderData.HalfEdges[e]) continue;
@@ -61,6 +55,14 @@ public static class WorldVisualizer
 
                 graphics.DrawLine(blackPen, p.Position.X - (smallestX * chunkSize), p.Position.Y - (smallestY * chunkSize), q.Position.X - (smallestX * chunkSize), q.Position.Y - (smallestY * chunkSize));
             }
+
+            foreach (var centroid in renderData.Centroids)
+            {
+                int realX = Math.Max(0, (int)(centroid.Position.X - (smallestX * chunkSize)));
+                int realY = Math.Max(0, (int)(centroid.Position.Y - (smallestY * chunkSize)));
+                bmp.SetPixel(realX, realY, Color.FromArgb(255, 0, 0));
+            }
+            */
         }
 
         bmp.Save($"{seed}.png", ImageFormat.Png);

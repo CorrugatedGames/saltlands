@@ -8,10 +8,6 @@ namespace SaltLands.WorldGenerator;
  *
  * Long list of potential improvements:
  *
- * - [x] Generate voronoi for 3x3 chunks (middle being the current one), but only keep geometry for the middle one:
- *      - https://www.reddit.com/r/proceduralgeneration/comments/4ejhzj/infinite_voronoi_tesselation/d20vmmb/
- *      - https://www.reddit.com/r/proceduralgeneration/comments/5ykjz4/applying_voronoi_to_an_infinite_2d_tile_map/dew7csm/
- *
  * - Weighted biome selection: https://www.reddit.com/r/proceduralgeneration/comments/7yrh9c/confused_on_how_to_implement_biomes/duj0hzl/
  * - Apply Lloyd's Relaxation:
  *      - https://pvigier.github.io/2019/05/12/vagabond-map-generation.html
@@ -20,11 +16,9 @@ namespace SaltLands.WorldGenerator;
  *      - https://pvigier.github.io/2019/05/26/vagabond-generating-tiles.html
  *      - http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/
  * - Add trees: https://freedium.cfd/https://towardsdatascience.com/replicating-minecraft-world-generation-in-python-1b491bc9b9a4
+ * - Do this: http://mc-server.xoft.cz/docs/Generator.html#biome.grown
+ * - More: https://procgen.space/resources
  *
- * Next up:
- * - cache a random instance on a chunk
- * - allow for getting nearby cached chunks (if not existent, create)
- * - use 3x3 voronoi instead of 1x1
  */
 
 internal partial class ChunkGenerator
@@ -137,12 +131,10 @@ internal partial class ChunkGenerator
 
         if (requestedFromAnotherChunk)
         {
-            Console.WriteLine($"Partial Load {chunk.Position.X},{chunk.Position.Y}");
             DetermineInitialChunkValuesPartial(chunk);
         }
         else
         {
-            Console.WriteLine($"FULL Load {chunk.Position.X},{chunk.Position.Y}");
             DetermineInitialChunkValuesFull(chunk);
         }
     }
@@ -155,7 +147,8 @@ internal partial class ChunkGenerator
         List<Vector2> allPoints = [.. points, .. surroundingPoints];
 
         // generate delaunay
-        GenerateCentroids(allPoints, out Triangulation delaunator, out List<Centroid> centroids);
+        Triangulation delaunator;
+        GenerateCentroids(allPoints, out delaunator, out List<Centroid> centroids);
 
         // generate values for centroids
         foreach (var centroid in centroids)

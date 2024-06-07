@@ -1,26 +1,5 @@
 ﻿namespace SaltLands.WorldGenerator;
 
-internal enum Biome
-{
-    Ocean,
-    ShallowWater,
-    DeepWater,
-    Beach,
-    Scorched,
-    Bare,
-    Tundra,
-    Snow,
-    TemperateDesert,
-    Shrubs,
-    Taiga,
-    Grassland,
-    TemperateDeciduousForest,
-    TemperateRainForest,
-    SubtropicalDesert,
-    TropicalSeasonalForest,
-    TropicalRainForest
-}
-
 internal class WorldGenerator
 {
     #region Public Fields

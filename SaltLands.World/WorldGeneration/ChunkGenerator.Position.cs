@@ -87,7 +87,7 @@ internal partial class ChunkGenerator
     private static float NormalizedNoise(FastNoiseLite generator, float x, float y)
     {
         float wavelength = 0.5f;
-        return 1 + generator.GetNoise(x / wavelength, y / wavelength) / 2;
+        return 1 + (generator.GetNoise(x / wavelength, y / wavelength) / 2);
     }
 
     // turn a string seed into a numeric one
