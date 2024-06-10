@@ -2,29 +2,15 @@
 
 internal class WorldGenerator
 {
-    #region Public Fields
-
     public readonly ChunkGenerator ChunkGenerator;
 
-    #endregion Public Fields
-
-    #region Private Fields
-
     private WorldSettings Settings;
-
-    #endregion Private Fields
-
-    #region Public Constructors
 
     public WorldGenerator(WorldSettings settings)
     {
         Settings = settings;
         ChunkGenerator = new ChunkGenerator(Settings);
     }
-
-    #endregion Public Constructors
-
-    #region Public Methods
 
     public void GenerateAroundCenter(int chunkX, int chunkY, int radius = -1)
     {
@@ -38,6 +24,4 @@ internal class WorldGenerator
             }
         }
     }
-
-    #endregion Public Methods
 }

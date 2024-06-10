@@ -24,17 +24,11 @@ internal enum Biome
 
 internal class BiomeStats
 {
-    #region Public Fields
-
     public Biome Biome;
     public float MaxHeight;
     public float MaxMoisture;
     public float MinHeight;
     public float MinMoisture;
-
-    #endregion Public Fields
-
-    #region Public Constructors
 
     public BiomeStats()
     {
@@ -43,14 +37,10 @@ internal class BiomeStats
         MaxMoisture = 1.5f;
         MinMoisture = 0.5f;
     }
-
-    #endregion Public Constructors
 }
 
 internal class BiomeTools
 {
-    #region Private Fields
-
     private static BiomeStats[] BiomeStats =
     {
         new BiomeStats { Biome = Biome.Ocean,                       MaxHeight = -0.60f },
@@ -78,10 +68,6 @@ internal class BiomeTools
         new BiomeStats { Biome = Biome.TropicalRainForest },
     };
 
-    #endregion Private Fields
-
-    #region Public Methods
-
     public static Biome GetBiome(float height, float moisture)
     {
         foreach (var biomeStats in BiomeStats)
@@ -95,6 +81,4 @@ internal class BiomeTools
         Console.WriteLine($"Unknown biome: {height} | {moisture}");
         return Biome.Unknown;
     }
-
-    #endregion Public Methods
 }

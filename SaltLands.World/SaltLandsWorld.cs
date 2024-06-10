@@ -17,24 +17,14 @@ namespace SaltLands.WorldGenerator;
 
 public class SaltLandsWorld : IDisposable
 {
-    #region Public Constructors
-
     public SaltLandsWorld()
     {
         Settings = new WorldSettings();
         Generator = new WorldGenerator(Settings);
     }
 
-    #endregion Public Constructors
-
-    #region Internal Properties
-
     internal WorldGenerator Generator { get; private set; }
     internal WorldSettings Settings { get; private set; }
-
-    #endregion Internal Properties
-
-    #region Public Methods
 
     public void Dispose()
     {
@@ -46,6 +36,4 @@ public class SaltLandsWorld : IDisposable
 
         Visualization.WorldVisualizer.RenderWorld(this);
     }
-
-    #endregion Public Methods
 }

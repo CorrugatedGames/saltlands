@@ -23,16 +23,10 @@ namespace SaltLands.WorldGenerator;
 
 internal partial class ChunkGenerator
 {
-    #region Private Fields
-
     private readonly FastNoiseLite HeightGenerator;
     private readonly FastNoiseLite MoistureGenerator;
     private readonly WorldSettings Settings;
     private readonly FastNoiseLite TemperatureGenerator;
-
-    #endregion Private Fields
-
-    #region Public Constructors
 
     public ChunkGenerator(WorldSettings settings)
     {
@@ -44,10 +38,6 @@ internal partial class ChunkGenerator
 
         InitializeGenerators();
     }
-
-    #endregion Public Constructors
-
-    #region Public Methods
 
     public void GenerateChunk(Chunk chunk, bool requestedFromAnotherChunk = false)
     {
@@ -63,10 +53,6 @@ internal partial class ChunkGenerator
 
         FinalizeChunk(chunk);
     }
-
-    #endregion Public Methods
-
-    #region Private Methods
 
     private static void GenerateCentroids(List<Vector2> points, out Triangulation delaunator, out List<Centroid> centroids)
     {
@@ -282,6 +268,4 @@ internal partial class ChunkGenerator
         // plant vegetation where applicable
         // grow vegetation if applicable
     }
-
-    #endregion Private Methods
 }

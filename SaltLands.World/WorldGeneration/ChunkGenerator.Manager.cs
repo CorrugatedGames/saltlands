@@ -4,19 +4,9 @@ namespace SaltLands.WorldGenerator;
 
 internal partial class ChunkGenerator
 {
-    #region Public Fields
-
     public Dictionary<string, Chunk> ChunkMap = [];
 
-    #endregion Public Fields
-
-    #region Public Properties
-
     public List<Chunk> LoadedChunks { get; private set; } = [];
-
-    #endregion Public Properties
-
-    #region Public Methods
 
     public Chunk? GetChunk(int chunkX, int chunkY)
     {
@@ -61,14 +51,8 @@ internal partial class ChunkGenerator
         ChunkMap.Remove(id);
     }
 
-    #endregion Public Methods
-
-    #region Private Methods
-
     private static string ChunkId(int chunkX, int chunkY)
     {
         return $"{chunkX},{chunkY}";
     }
-
-    #endregion Private Methods
 }

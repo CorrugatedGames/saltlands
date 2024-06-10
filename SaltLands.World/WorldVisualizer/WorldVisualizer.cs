@@ -7,8 +7,6 @@ namespace SaltLands.Visualization;
 
 public static class WorldVisualizer
 {
-    #region Public Methods
-
     [SupportedOSPlatform("windows")]
     public static void RenderWorld(SaltLandsWorld world)
     {
@@ -67,10 +65,6 @@ public static class WorldVisualizer
 
         bmp.Save($"{seed}.png", ImageFormat.Png);
     }
-
-    #endregion Public Methods
-
-    #region Private Methods
 
     private static Color GetColorFromBiome(Biome biome)
     {
@@ -144,6 +138,4 @@ public static class WorldVisualizer
             return Color.FromArgb(255, 254, 255);
         }
     }
-
-    #endregion Private Methods
 }

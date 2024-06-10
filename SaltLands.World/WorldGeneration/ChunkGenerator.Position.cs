@@ -6,40 +6,26 @@ namespace SaltLands.WorldGenerator;
 
 internal class Centroid
 {
-    #region Public Fields
-
     public float Height;
     public float Moisture;
     public Vector2 Position;
     public float Temperature;
-
-    #endregion Public Fields
 }
 
 internal class VoronoiRenderData
 {
-    #region Public Fields
-
-    public List<Centroid> Centroids;
-    public List<int> HalfEdges;
+    public List<Centroid> Centroids = [];
+    public List<int> HalfEdges = [];
     public int NumEdges;
     public int NumRegions;
     public int NumTriangles;
-    public List<Vector2> Points;
-    public List<int> Triangles;
-
-    #endregion Public Fields
+    public List<Vector2> Points = [];
+    public List<int> Triangles = [];
 }
 
 internal partial class ChunkGenerator
 {
-    #region Private Delegates
-
     private delegate void ChunkTileIterator(Chunk chunk, Tile tile);
-
-    #endregion Private Delegates
-
-    #region Private Methods
 
     private static float AverageInRadius(FastNoiseLite generator, int cellX, int cellY, int radius = 1)
     {
@@ -112,6 +98,4 @@ internal partial class ChunkGenerator
         int chunkSize = Settings.MagicNumbers.ChunkSize;
         return (int)((chunk.Position.Y * chunkSize) + tile.Position.Y);
     }
-
-    #endregion Private Methods
 }

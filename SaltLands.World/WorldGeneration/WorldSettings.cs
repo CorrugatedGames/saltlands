@@ -4,16 +4,10 @@ namespace SaltLands;
 
 public class WorldSettings
 {
-    #region Public Fields
-
     public readonly WorldMagicNumbers MagicNumbers = new();
     public readonly WorldMetadata Metadata = new();
 
     public readonly int WorldVersion = 1;
-
-    #endregion Public Fields
-
-    #region Public Properties
 
     public int MapSizeX
     { get { return MagicNumbers.MapSizeX; } }
@@ -24,14 +18,8 @@ public class WorldSettings
     public Vector2 SpawnPoint
     { get { return new Vector2(MagicNumbers.SpawnX, MagicNumbers.SpawnY); } }
 
-    #endregion Public Properties
-
-    #region Public Classes
-
     public class WorldMagicNumbers
     {
-        #region Public Fields
-
         // how many ms between each save of the world
         public int AutoSaveInterval = 300 * 1000;
 
@@ -96,20 +84,12 @@ public class WorldSettings
 
         // how many entities each client can track at most
         public int TrackedEntitiesPerClient = 1000;
-
-        #endregion Public Fields
     }
 
     public class WorldMetadata
     {
-        #region Public Fields
-
         public string SavefileLocation = "./Save/BrandNewWorld.saltworld";
         public string WorldName = "Brand New World";
         public string WorldSeed = "1234567890";
-
-        #endregion Public Fields
     }
-
-    #endregion Public Classes
 }
